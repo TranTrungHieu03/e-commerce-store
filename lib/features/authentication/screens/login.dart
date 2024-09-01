@@ -1,7 +1,9 @@
 import 'package:e_store/commons/styles/spacing_styles.dart';
 import 'package:e_store/commons/widgets/authentication/form_divider.dart';
 import 'package:e_store/commons/widgets/authentication/social_btn.dart';
-import 'package:e_store/utils/constants/colors.dart';
+import 'package:e_store/features/authentication/screens/forget_password.dart';
+import 'package:e_store/features/authentication/screens/signup.dart';
+import 'package:e_store/navigation_menu.dart';
 import 'package:e_store/utils/constants/image_strings.dart';
 import 'package:e_store/utils/constants/sizes.dart';
 import 'package:e_store/utils/constants/text_strings.dart';
@@ -41,8 +43,6 @@ class LoginScreen extends StatelessWidget {
     );
   }
 }
-
-
 
 class LoginHeader extends StatelessWidget {
   const LoginHeader({
@@ -115,7 +115,8 @@ class LoginForm extends StatelessWidget {
             ),
             //Forget Pass
             TextButton(
-                onPressed: () {}, child: const Text(TTexts.forgetPassword))
+                onPressed: () => Get.to(() => const ForgetPasswordScreen()),
+                child: const Text(TTexts.forgetPassword))
           ],
         ),
         const SizedBox(
@@ -125,7 +126,8 @@ class LoginForm extends StatelessWidget {
         SizedBox(
           width: double.infinity,
           child: ElevatedButton(
-              onPressed: () {}, child: const Text(TTexts.signIn)),
+              onPressed: () => Get.to(() => const NavigationMenu()),
+              child: const Text(TTexts.signIn)),
         ),
         const SizedBox(
           height: TSizes.spacebtwItems,
@@ -134,7 +136,8 @@ class LoginForm extends StatelessWidget {
         SizedBox(
           width: double.infinity,
           child: OutlinedButton(
-              onPressed: () {}, child: const Text(TTexts.createAccount)),
+              onPressed: () => Get.to(() => const SignupScreen()),
+              child: const Text(TTexts.createAccount)),
         ),
         const SizedBox(
           height: TSizes.spacebtwSections,
