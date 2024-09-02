@@ -1,7 +1,15 @@
-import 'package:e_store/commons/widgets/appbar/appbar.dart';
 import 'package:e_store/commons/widgets/custom_shapes/containers/primary_header_container.dart';
+import 'package:e_store/commons/widgets/custom_shapes/containers/search_container.dart';
+import 'package:e_store/commons/widgets/layouts/grid_layout.dart';
+import 'package:e_store/commons/widgets/product_cards/product_card_vertical.dart';
+import 'package:e_store/commons/widgets/texts/section_heading.dart';
+import 'package:e_store/features/shop/screens/home/widgets/home_appbar.dart';
+import 'package:e_store/features/shop/screens/home/widgets/home_categories.dart';
+import 'package:e_store/features/shop/screens/home/widgets/promo_slider.dart';
 import 'package:e_store/utils/constants/colors.dart';
-import 'package:e_store/utils/constants/text_strings.dart';
+import 'package:e_store/utils/constants/image_strings.dart';
+import 'package:e_store/utils/constants/sizes.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -14,35 +22,65 @@ class HomeScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            TPrimaryHeaderContainer(
+            const TPrimaryHeaderContainer(
                 child: Column(
               children: [
-                TAppbar(
-                  title: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        TTexts.homeAppbarTitle,
-                        style: Theme.of(context)
-                            .textTheme
-                            .labelMedium!
-                            .apply(color: TColors.grey),
+                THomeAppBar(),
+
+                SizedBox(
+                  height: TSizes.spacebtwSections,
+                ),
+
+                //search bar
+
+                TSearchContainer(
+                  icon: Iconsax.search_normal,
+                  text: 'Search in Store',
+                ),
+
+                SizedBox(
+                  height: TSizes.spacebtwSections,
+                ),
+
+                //Heading & Categories
+                Padding(
+                    padding: EdgeInsets.only(left: TSizes.defaultSpace),
+                    child: Column(children: [
+                      TSectionHeading(
+                        title: 'Popular Categories',
+                        showActionButton: false,
                       ),
-                      Text(
-                        TTexts.homeAppbarSubTitle,
-                        style: Theme.of(context)
-                            .textTheme
-                            .headlineSmall!
-                            .apply(color: Colors.white),
-                      )
+                      SizedBox(
+                        height: TSizes.spacebtwItems,
+                      ),
+                      THomeCategories(),
+                    ])),
+              ],
+            )),
+            //Body
+            const Padding(
+              padding: EdgeInsets.all(TSizes.defaultSpace),
+              child: Column(
+                children: [
+                  TPromoSlider(
+                    banners: [
+                      TImages.banner3,
+                      TImages.banner2,
+                      TImages.banner1,
                     ],
                   ),
-                  actions: [
-                    TCartCounterIcon(onPressed: () {}, iconColor: TColors.white)
-                  ],
-                )
-              ],
-            ))
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: TSizes.spacebtwItems,
+            ),
+
+            //Popular product
+            TGridLayout(
+              itemCount: 2,
+              itemBuilder: (_, index) => const TProductCardVertical(),
+            ),
           ],
         ),
       ),
