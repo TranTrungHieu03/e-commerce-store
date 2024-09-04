@@ -6,11 +6,11 @@ import 'package:flutter/material.dart';
 class TVerticalImageText extends StatelessWidget {
   const TVerticalImageText(
       {super.key,
-        required this.image,
-        required this.title,
-        this.textColor = TColors.white,
-        this.backgroundColor = TColors.white,
-        this.onTap});
+      required this.image,
+      required this.title,
+      this.textColor = TColors.white,
+      this.backgroundColor,
+      this.onTap});
 
   final String image, title;
   final Color textColor;
@@ -32,13 +32,13 @@ class TVerticalImageText extends StatelessWidget {
               padding: const EdgeInsets.all(TSizes.sm),
               decoration: BoxDecoration(
                   color:
-                  backgroundColor ?? (dark ? TColors.black : TColors.white),
+                      backgroundColor ?? (dark ? TColors.black : TColors.white),
                   borderRadius: BorderRadius.circular(100)),
               child: Center(
                 child: Image(
                   image: AssetImage(image),
                   fit: BoxFit.cover,
-                  color: TColors.dark,
+                  color: dark ? TColors.white : TColors.dark,
                 ),
               ),
             ),

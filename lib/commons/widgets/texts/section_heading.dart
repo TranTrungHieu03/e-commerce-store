@@ -1,12 +1,12 @@
 import 'package:e_store/utils/constants/colors.dart';
-import 'package:e_store/utils/constants/sizes.dart';
+import 'package:e_store/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 
 class TSectionHeading extends StatelessWidget {
   const TSectionHeading(
       {super.key,
       this.onPressed,
-      this.textColor = TColors.white,
+      this.textColor,
       this.buttonTitle = 'View all',
       required this.title,
       this.showActionButton = true});
@@ -23,10 +23,10 @@ class TSectionHeading extends StatelessWidget {
       children: [
         Text(
           title,
-          style: Theme.of(context)
-              .textTheme
-              .headlineSmall!
-              .apply(color: textColor),
+          style: Theme.of(context).textTheme.headlineSmall!.apply(
+              color: textColor ?? (THelperFunctions.isDarkMode(context)
+                      ? TColors.white
+                      : TColors.black)),
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
         ),

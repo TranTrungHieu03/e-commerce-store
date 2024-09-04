@@ -52,4 +52,7 @@ class TImages {
   static const String shoe3 = 'assets/images/products/shoe-3.png';
   static const String shoe4 = 'assets/images/products/shoe-4.png';
   static const String dummy1 = 'assets/images/products/dummy-1.png';
+
+  //profile
+  static const String avatar = 'assets/images/users/flexy-man-avatar-3.png';
 }

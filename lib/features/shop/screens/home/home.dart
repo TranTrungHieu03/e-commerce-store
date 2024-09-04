@@ -43,7 +43,8 @@ class HomeScreen extends StatelessWidget {
 
                 //Heading & Categories
                 Padding(
-                    padding: EdgeInsets.only(left: TSizes.defaultSpace),
+                    padding: EdgeInsets.only(
+                        left: TSizes.defaultSpace, bottom: TSizes.spacebtwSections),
                     child: Column(children: [
                       TSectionHeading(
                         title: 'Popular Categories',
