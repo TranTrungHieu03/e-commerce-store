@@ -9,7 +9,6 @@ import 'package:e_store/features/shop/screens/home/widgets/promo_slider.dart';
 import 'package:e_store/utils/constants/colors.dart';
 import 'package:e_store/utils/constants/image_strings.dart';
 import 'package:e_store/utils/constants/sizes.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -58,28 +57,28 @@ class HomeScreen extends StatelessWidget {
               ],
             )),
             //Body
-            const Padding(
-              padding: EdgeInsets.all(TSizes.defaultSpace),
+            Padding(
+              padding: const EdgeInsets.all(TSizes.defaultSpace),
               child: Column(
                 children: [
-                  TPromoSlider(
+                  const TPromoSlider(
                     banners: [
                       TImages.banner3,
                       TImages.banner2,
                       TImages.banner1,
                     ],
                   ),
+                  const SizedBox(
+                    height: TSizes.spacebtwItems,
+                  ),
+
+                  //Popular product
+                  TGridLayout(
+                    itemCount: 2,
+                    itemBuilder: (_, index) => const TProductCardVertical(),
+                  ),
                 ],
               ),
-            ),
-            const SizedBox(
-              height: TSizes.spacebtwItems,
-            ),
-
-            //Popular product
-            TGridLayout(
-              itemCount: 2,
-              itemBuilder: (_, index) => const TProductCardVertical(),
             ),
           ],
         ),

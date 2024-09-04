@@ -6,7 +6,6 @@ import 'package:e_store/commons/widgets/texts/brand_title_with_verified_icon.dar
 import 'package:e_store/commons/widgets/texts/product_price_text.dart';
 import 'package:e_store/commons/widgets/texts/product_title_text.dart';
 import 'package:e_store/utils/constants/colors.dart';
-import 'package:e_store/utils/constants/enums.dart';
 import 'package:e_store/utils/constants/image_strings.dart';
 import 'package:e_store/utils/constants/sizes.dart';
 import 'package:e_store/utils/helpers/helper_functions.dart';
@@ -29,6 +28,7 @@ class TProductCardVertical extends StatelessWidget {
             borderRadius: BorderRadius.circular(TSizes.productImageRadius),
             color: dark ? TColors.darkerGrey : TColors.white),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             //Thumbnail, wishList, discount
             TRoundedContainer(
@@ -74,19 +74,19 @@ class TProductCardVertical extends StatelessWidget {
 
             //details
 
-            Padding(
-              padding: const EdgeInsets.only(left: TSizes.sm),
+            const Padding(
+              padding: EdgeInsets.only(left: TSizes.sm),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const TProductTitleText(
+                  TProductTitleText(
                     title: 'Green Nike Air Shoes',
                     smallSize: true,
                   ),
-                  const SizedBox(
+                  SizedBox(
                     height: TSizes.spacebtwItems / 2,
                   ),
-                  TBrandTitleWithVerifiedIcon(title: ''),
+                  TBrandTitleWithVerifiedIcon(title: 'Nike'),
                 ],
               ),
             ),
@@ -97,7 +97,7 @@ class TProductCardVertical extends StatelessWidget {
                 //Price
                 const Padding(
                   padding: EdgeInsets.all(TSizes.sm),
-                  child: TProductPriceText(price: '35'),
+                  child: TProductPriceText(price: '35.0'),
                 ),
                 Container(
                   decoration: const BoxDecoration(
@@ -126,4 +126,3 @@ class TProductCardVertical extends StatelessWidget {
     );
   }
 }
-

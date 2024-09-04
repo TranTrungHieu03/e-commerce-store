@@ -1,3 +1,4 @@
+import 'package:e_store/utils/constants/colors.dart';
 import 'package:e_store/utils/theme/customs_themes/appbar_theme.dart';
 import 'package:e_store/utils/theme/customs_themes/bottom_sheet_theme.dart';
 import 'package:e_store/utils/theme/customs_themes/checkbox_theme.dart';
@@ -30,7 +31,7 @@ class TAppTheme {
       fontFamily: 'Poppins',
       brightness: Brightness.dark,
       primaryColor: Colors.blue,
-      scaffoldBackgroundColor: Colors.black,
+      scaffoldBackgroundColor: TColors.black,
       textTheme: TTextTheme.darkTheme,
       elevatedButtonTheme: TElevatedButtonTheme.darkTheme,
       chipTheme: TChipTheme.darkTheme,
