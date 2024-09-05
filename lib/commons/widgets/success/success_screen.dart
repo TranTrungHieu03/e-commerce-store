@@ -1,5 +1,4 @@
 import 'package:e_store/commons/styles/spacing_styles.dart';
-import 'package:e_store/utils/constants/image_strings.dart';
 import 'package:e_store/utils/constants/sizes.dart';
 import 'package:e_store/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +23,7 @@ class SuccessScreen extends StatelessWidget {
           child: Column(
             children: [
               Image(
-                image: const AssetImage(TImages.deliveryEmailIllustration),
+                image: AssetImage(image),
                 width: THelperFunctions.screenWidth() * 0.6,
               ),
               const SizedBox(

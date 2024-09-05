@@ -4,12 +4,14 @@ import 'package:e_store/commons/widgets/brands/brand_card.dart';
 import 'package:e_store/commons/widgets/custom_shapes/containers/search_container.dart';
 import 'package:e_store/commons/widgets/layouts/grid_layout.dart';
 import 'package:e_store/commons/widgets/texts/section_heading.dart';
+import 'package:e_store/features/shop/screens/all_brands/all_brands.dart';
 import 'package:e_store/features/shop/screens/home/home.dart';
 import 'package:e_store/features/shop/screens/store/widgets/category_tab.dart';
 import 'package:e_store/utils/constants/colors.dart';
 import 'package:e_store/utils/constants/sizes.dart';
 import 'package:e_store/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class StoreScreen extends StatelessWidget {
   const StoreScreen({super.key});
@@ -66,7 +68,7 @@ class StoreScreen extends StatelessWidget {
 
                       TSectionHeading(
                         title: 'Featured Brands',
-                        onPressed: () {},
+                        onPressed: () => Get.to(() => const AllBrandsScreen()),
                         textColor: THelperFunctions.isDarkMode(context)
                             ? TColors.white
                             : TColors.black,

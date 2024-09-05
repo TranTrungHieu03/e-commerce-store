@@ -3,8 +3,8 @@ class TImages {
   static const String lightAppLogo = "assets/logos/logo.png";
 
   //social logos
-  static const String google = "assets/logos/google.png";
-  static const String facebook = "assets/logos/facebook.png";
+  static const String google = "assets/logos/3d-fluency-google-logo.png";
+  static const String facebook = "assets/logos/icons8-facebook-64.png";
 
   //onboarding
   static const String delivery = "assets/images/on_boarding/delivery.png";
@@ -27,7 +27,7 @@ class TImages {
 
   //categories
   static const String sport = 'assets/images/categories/icons8-sport-64.png';
-  static const String cloth = 'assets/images/categories/icons8-cloth-64.png';
+  static const String cloth = 'assets/images/categories/icons8-dummy-64.png';
   static const String shoes = 'assets/images/categories/icons8-shoes-64.png';
   static const String cosmetic =
       'assets/images/categories/icons8-cosmetic-64.png';

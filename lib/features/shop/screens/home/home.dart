@@ -3,6 +3,7 @@ import 'package:e_store/commons/widgets/custom_shapes/containers/search_containe
 import 'package:e_store/commons/widgets/layouts/grid_layout.dart';
 import 'package:e_store/commons/widgets/product_cards/product_card_vertical.dart';
 import 'package:e_store/commons/widgets/texts/section_heading.dart';
+import 'package:e_store/features/shop/screens/all_products/all_products.dart';
 import 'package:e_store/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:e_store/features/shop/screens/home/widgets/home_categories.dart';
 import 'package:e_store/features/shop/screens/home/widgets/promo_slider.dart';
@@ -10,6 +11,7 @@ import 'package:e_store/utils/constants/colors.dart';
 import 'package:e_store/utils/constants/image_strings.dart';
 import 'package:e_store/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -44,7 +46,8 @@ class HomeScreen extends StatelessWidget {
                 //Heading & Categories
                 Padding(
                     padding: EdgeInsets.only(
-                        left: TSizes.defaultSpace, bottom: TSizes.spacebtwSections),
+                        left: TSizes.defaultSpace,
+                        bottom: TSizes.spacebtwSections),
                     child: Column(children: [
                       TSectionHeading(
                         title: 'Popular Categories',
@@ -68,6 +71,15 @@ class HomeScreen extends StatelessWidget {
                       TImages.banner2,
                       TImages.banner1,
                     ],
+                  ),
+                  const SizedBox(
+                    height: TSizes.spacebtwItems,
+                  ),
+
+                  //heading
+                  TSectionHeading(
+                    title: 'Popular Products',
+                    onPressed: () => Get.to(() => const AllProductsScreen()),
                   ),
                   const SizedBox(
                     height: TSizes.spacebtwItems,
