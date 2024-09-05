@@ -3,7 +3,10 @@ import 'package:e_store/commons/widgets/custom_shapes/containers/primary_header_
 import 'package:e_store/commons/widgets/list_tiles/settings_menu_tile.dart';
 import 'package:e_store/commons/widgets/list_tiles/user_profile_tile.dart';
 import 'package:e_store/commons/widgets/texts/section_heading.dart';
+import 'package:e_store/features/personalization/screens/address/address.dart';
 import 'package:e_store/features/personalization/screens/profile/profile.dart';
+import 'package:e_store/features/shop/screens/cart/cart.dart';
+import 'package:e_store/features/shop/screens/order/order.dart';
 import 'package:e_store/utils/constants/colors.dart';
 import 'package:e_store/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
@@ -56,20 +59,23 @@ class SettingsScreen extends StatelessWidget {
                   const SizedBox(
                     height: TSizes.spacebtwItems,
                   ),
-                  const TSettingsMenuTile(
+                  TSettingsMenuTile(
                     icon: Iconsax.safe_home,
                     title: 'My Addresses',
                     subTitle: 'Set shopping delivery address.',
+                    onTap: () => Get.to(() => const UserAddressScreen()),
                   ),
-                  const TSettingsMenuTile(
+                  TSettingsMenuTile(
                     icon: Iconsax.shopping_cart,
                     title: 'My Cart',
                     subTitle: 'Add, remove products and move to checkout.',
+                    onTap: () => Get.to(() => const CartScreen()),
                   ),
-                  const TSettingsMenuTile(
+                  TSettingsMenuTile(
                     icon: Iconsax.bag_tick,
                     title: 'My Orders',
                     subTitle: 'In-progress and complete orders.',
+                    onTap: () => Get.to(() => const OrderScreen()),
                   ),
                   const TSettingsMenuTile(
                     icon: Iconsax.bank,

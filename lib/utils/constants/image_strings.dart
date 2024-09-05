@@ -55,4 +55,17 @@ class TImages {
 
   //profile
   static const String avatar = 'assets/images/users/flexy-man-avatar-3.png';
+
+  //reviews
+  static const String user1 =
+      'assets/images/reviews/active-man-thinking-avatar.png';
+  static const String user2 =
+      'assets/images/reviews/flexy-woman-avatar-with-a-cat.png';
+  static const String user3 =
+      'assets/images/reviews/glam-female-user-avatar-slash-profile-picture.png';
+
+  //checkout
+  static const String paypal = 'assets/logos/3d-fluency-paypal-logo.png';
+  static const String paymentSuccess = 'assets/images/animations/isometric-payment-by-tapping-card-over-payment-terminal.png';
+
 }
